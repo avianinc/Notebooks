@@ -31,7 +31,7 @@ package example {
             in l: Length; 
             in w: Width; 
             in h: Height;
-            return : Volume = (l * w * h);
+            return : Volume = (l * w * (h+5)); // little trick here :)
             }
         }
     
