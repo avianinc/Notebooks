@@ -31,8 +31,8 @@
             "ui_data": {
               "label": "pull_vendor_api.ipynb",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 53,
-              "y_pos": 362.9999771118164,
+              "x_pos": 21,
+              "y_pos": 459.9999771118164,
               "description": "Run notebook file"
             }
           },
@@ -88,8 +88,8 @@
             "ui_data": {
               "label": "push_adt_model.ipynb",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 314,
-              "y_pos": 372.9999771118164,
+              "x_pos": 552,
+              "y_pos": 517.9999771118164,
               "description": "Run notebook file"
             }
           },
@@ -107,8 +107,8 @@
               },
               "links": [
                 {
-                  "id": "7c988bfa-c7c5-47ab-9326-8d854b4b30cf",
-                  "node_id_ref": "e284d606-e016-4468-bbdc-5bb339250b0b",
+                  "id": "5f89f79d-c28b-4ba2-bce6-5314335be41f",
+                  "node_id_ref": "474fa23b-dd20-4eeb-841d-c8390cc59be5",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -152,8 +152,8 @@
             "ui_data": {
               "label": "update_cad_model.ipynb",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 600,
-              "y_pos": 347.00000762939453,
+              "x_pos": 269,
+              "y_pos": 457.00000762939453,
               "description": "Run notebook file"
             }
           },
@@ -171,8 +171,8 @@
               },
               "links": [
                 {
-                  "id": "1dfd94a9-9625-4b82-b0b4-65dc86958da3",
-                  "node_id_ref": "cd345922-7352-4cd9-823d-2eb0a1fe7686",
+                  "id": "e4d24ef4-3022-4f7a-9bc1-5543b15ad317",
+                  "node_id_ref": "e284d606-e016-4468-bbdc-5bb339250b0b",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -216,8 +216,8 @@
             "ui_data": {
               "label": "git_push_model.ipynb",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 867,
-              "y_pos": 331.00000762939453,
+              "x_pos": 640,
+              "y_pos": 222.99999237060547,
               "description": "Run notebook file"
             }
           },
@@ -280,8 +280,8 @@
             "ui_data": {
               "label": "execute_server_side.ipynb",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 631,
-              "y_pos": 479,
+              "x_pos": 822,
+              "y_pos": 527,
               "description": "Run notebook file"
             }
           },
@@ -320,6 +320,70 @@
               }
             }
           ]
+        },
+        {
+          "id": "ef99918a-7c79-4d7d-900e-d687e33d328e",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "component_parameters": {
+              "dependencies": [],
+              "include_subdirectories": false,
+              "outputs": [],
+              "env_vars": [],
+              "kubernetes_pod_annotations": [],
+              "kubernetes_pod_labels": [],
+              "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
+              "kubernetes_tolerations": [],
+              "mounted_volumes": [],
+              "filename": "store_plot_volume.ipynb",
+              "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
+            },
+            "label": "",
+            "ui_data": {
+              "label": "store_plot_volume.ipynb",
+              "image": "/static/elyra/notebook.svg",
+              "x_pos": 1228,
+              "y_pos": 539,
+              "description": "Run notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "be50cba2-f550-44a4-be11-d566f9318d4e",
+                  "node_id_ref": "7b9ae655-c2c0-4f3c-84b1-75f1e7d6ce0e",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
         }
       ],
       "app_data": {
@@ -327,8 +391,8 @@
           "comments": [
             {
               "id": "61a6c442-0894-4692-aa72-5c3fb356fd78",
-              "x_pos": 27,
-              "y_pos": 185.99999237060547,
+              "x_pos": 40,
+              "y_pos": 200.00000762939453,
               "width": 175,
               "height": 79,
               "content": "Pull vendor data from vendor model",
@@ -341,8 +405,8 @@
             },
             {
               "id": "3e2755ca-cc1c-43a1-9293-ec4d3a79d12f",
-              "x_pos": 301,
-              "y_pos": 169,
+              "x_pos": 601,
+              "y_pos": 355.00001525878906,
               "width": 175,
               "height": 98,
               "content": "Push vendor values to ADT model",
@@ -355,15 +419,43 @@
             },
             {
               "id": "48a991de-adf5-429a-8a4b-b834ecf2fb3c",
-              "x_pos": 611,
-              "y_pos": 192,
+              "x_pos": 298,
+              "y_pos": 209,
               "width": 175,
-              "height": 72,
-              "content": "Update the CAD model",
+              "height": 97,
+              "content": "Update the local CAD envelope model",
               "associated_id_refs": [
                 {
                   "id": "b2b7ef8c-01cd-4b65-90ef-d3b6dc5e8198",
                   "node_ref": "474fa23b-dd20-4eeb-841d-c8390cc59be5"
+                }
+              ]
+            },
+            {
+              "id": "11168345-a3c6-4597-87bf-accafe82e96b",
+              "x_pos": 563.9999694824219,
+              "y_pos": 63,
+              "width": 175,
+              "height": 95,
+              "content": "Commit CAD model to repository",
+              "associated_id_refs": [
+                {
+                  "id": "576ec688-93a3-4bc3-9bc7-9e66442b5bbc",
+                  "node_ref": "63ab46f0-1766-4891-ad71-0e216d4ddc7f"
+                }
+              ]
+            },
+            {
+              "id": "43936dcc-7499-401c-9699-ec9ff0804cee",
+              "x_pos": 861.9999694824219,
+              "y_pos": 365.9999771118164,
+              "width": 175,
+              "height": 106,
+              "content": "Execute server model calculatedVolume",
+              "associated_id_refs": [
+                {
+                  "id": "fedcc83e-ce69-469d-aaf0-1e3b694a8b03",
+                  "node_ref": "7b9ae655-c2c0-4f3c-84b1-75f1e7d6ce0e"
                 }
               ]
             }
