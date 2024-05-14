@@ -1,1 +1,22 @@
-[{"Description":"length","Value":"2.015"},{"Description":"height","Value":"13.666"},{"Description":"width","Value":"1.001"},{"Description":"dateTime","Value":"1.0"}]
+[
+    {
+        "Description": "length",
+        "Value": "2.015"
+    },
+    {
+        "Description": "height",
+        "Value": "13.666"
+    },
+    {
+        "Description": "width",
+        "Value": "1.001"
+    },
+    {
+        "Description": "dateTime",
+        "Value": "1.0"
+    },
+    {
+        "Description": "cadVolume",
+        "Value": "27.56452699"
+    }
+]
