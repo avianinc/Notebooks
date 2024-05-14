@@ -475,10 +475,10 @@
             },
             {
               "id": "748364e4-ade6-47e9-8960-1b3774d3baf5",
-              "x_pos": 185,
-              "y_pos": 172.99999237060547,
+              "x_pos": 137,
+              "y_pos": 173.99999237060547,
               "width": 175,
-              "height": 104,
+              "height": 109,
               "content": "This sample pipleline model demonstratsa potential interaction between a Vendor mdoel and the ADT Model.",
               "associated_id_refs": []
             }
