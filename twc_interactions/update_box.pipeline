@@ -344,8 +344,8 @@
             "ui_data": {
               "label": "store_plot_volume.ipynb",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 1228,
-              "y_pos": 538,
+              "x_pos": 1134,
+              "y_pos": 544,
               "description": "Run notebook file"
             }
           },
