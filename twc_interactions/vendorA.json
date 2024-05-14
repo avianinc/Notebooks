@@ -1,15 +1,15 @@
 [
     {
         "Description": "length",
-        "Value": "3.256"
+        "Value": "2.015"
     },
     {
         "Description": "height",
-        "Value": "14.2"
+        "Value": "1.25"
     },
     {
         "Description": "width",
-        "Value": "2.635"
+        "Value": "1.001"
     },
     {
         "Description": "dateTime",
@@ -17,6 +17,6 @@
     },
     {
         "Description": "cadVolume",
-        "Value": "121.82975199999997"
+        "Value": "2.5212687499999995"
     }
 ]
