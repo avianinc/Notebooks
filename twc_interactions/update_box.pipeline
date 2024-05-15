@@ -466,6 +466,15 @@
                   "node_ref": "63ab46f0-1766-4891-ad71-0e216d4ddc7f"
                 }
               ]
+            },
+            {
+              "id": "86e22468-1ace-4d67-a65e-a02bb8aaeb05",
+              "x_pos": 177,
+              "y_pos": 296.9999771118164,
+              "width": 402,
+              "height": 100.00003051757812,
+              "content": "# Example pipeline application\n\nThis is an example pipeline using IBMs Elyra in Jupyter Lab.",
+              "associated_id_refs": []
             }
           ]
         },
