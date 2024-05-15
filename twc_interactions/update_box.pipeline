@@ -27,12 +27,12 @@
               "filename": "pull_vendor_api.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "",
+            "label": "Pull Vendor Data",
             "ui_data": {
-              "label": "pull_vendor_api.ipynb",
+              "label": "Pull Vendor Data",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 139,
-              "y_pos": 563.9999771118164,
+              "x_pos": 180,
+              "y_pos": 604.9999465942383,
               "description": "Run notebook file"
             }
           },
@@ -84,12 +84,12 @@
               "filename": "push_adt_model.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "",
+            "label": "Push ADT Model",
             "ui_data": {
-              "label": "push_adt_model.ipynb",
+              "label": "Push ADT Model",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 670,
-              "y_pos": 621.9999771118164,
+              "x_pos": 740,
+              "y_pos": 663.9999465942383,
               "description": "Run notebook file"
             }
           },
@@ -148,12 +148,12 @@
               "filename": "update_cad_model.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "",
+            "label": "Update CAD",
             "ui_data": {
-              "label": "update_cad_model.ipynb",
+              "label": "Update CAD",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 387,
-              "y_pos": 561.0000076293945,
+              "x_pos": 426,
+              "y_pos": 604.9999771118164,
               "description": "Run notebook file"
             }
           },
@@ -212,12 +212,12 @@
               "filename": "git_push_model.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "",
+            "label": "Commit CAD",
             "ui_data": {
-              "label": "git_push_model.ipynb",
+              "label": "Commit CAD",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 759,
-              "y_pos": 326.99999237060547,
+              "x_pos": 746,
+              "y_pos": 422.99996185302734,
               "description": "Run notebook file"
             }
           },
@@ -276,12 +276,12 @@
               "filename": "execute_server_side.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "",
+            "label": "TWC Exectute",
             "ui_data": {
-              "label": "execute_server_side.ipynb",
+              "label": "TWC Exectute",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 940,
-              "y_pos": 631,
+              "x_pos": 978,
+              "y_pos": 664.9999694824219,
               "description": "Run notebook file"
             }
           },
@@ -340,12 +340,12 @@
               "filename": "store_plot_volume.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "",
+            "label": "Update Dashbard",
             "ui_data": {
-              "label": "store_plot_volume.ipynb",
+              "label": "Update Dashbard",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 1254,
-              "y_pos": 648,
+              "x_pos": 1223,
+              "y_pos": 664.9999694824219,
               "description": "Run notebook file"
             }
           },
@@ -391,11 +391,11 @@
           "comments": [
             {
               "id": "0b0f46a3-9665-4e55-aecd-f612efb74df0",
-              "x_pos": 1312,
-              "y_pos": 449.9999771118164,
+              "x_pos": 1252,
+              "y_pos": 501.9999465942383,
               "width": 175,
-              "height": 59,
-              "content": "Store the returned results from the server to a temp file for a report.",
+              "height": 55,
+              "content": "Store the returned results from the server to a temp file and update report.",
               "associated_id_refs": [
                 {
                   "id": "75f623a3-2287-4fb2-9cd9-a6c821661784",
@@ -405,11 +405,11 @@
             },
             {
               "id": "ef2d6fdb-1dbb-4670-a25a-605506b2f8ca",
-              "x_pos": 988,
-              "y_pos": 464.9999771118164,
+              "x_pos": 1010,
+              "y_pos": 539.9999465942383,
               "width": 175,
-              "height": 45,
-              "content": "Execute server model calculatedVolume",
+              "height": 46,
+              "content": "Execute TWC server model calculatedVolume",
               "associated_id_refs": [
                 {
                   "id": "e613525d-5a44-4943-8085-62060503a635",
@@ -419,8 +419,8 @@
             },
             {
               "id": "f8f48546-ee36-4465-99a9-b66ba0c36eb5",
-              "x_pos": 708,
-              "y_pos": 498.9999771118164,
+              "x_pos": 780,
+              "y_pos": 543.9999465942383,
               "width": 175,
               "height": 45,
               "content": "Push vendor values to ADT model",
@@ -433,8 +433,8 @@
             },
             {
               "id": "43de2b1a-0917-4820-8aec-abcc8551c1fc",
-              "x_pos": 386,
-              "y_pos": 378.00000762939453,
+              "x_pos": 453,
+              "y_pos": 479.9999771118164,
               "width": 175,
               "height": 45,
               "content": "Update the local CAD envelope model",
@@ -447,8 +447,8 @@
             },
             {
               "id": "27e35d3f-b9fc-4625-b221-315f87223b89",
-              "x_pos": 152,
-              "y_pos": 412.00000762939453,
+              "x_pos": 201,
+              "y_pos": 481.9999771118164,
               "width": 175,
               "height": 45,
               "content": "Pull vendor data from vendor model",
@@ -461,8 +461,8 @@
             },
             {
               "id": "561fa0fd-e5e8-4757-9c18-b05f5050aa03",
-              "x_pos": 825,
-              "y_pos": 199,
+              "x_pos": 809,
+              "y_pos": 306.9999694824219,
               "width": 175,
               "height": 45,
               "content": "Commit CAD model to repository",
@@ -475,11 +475,11 @@
             },
             {
               "id": "748364e4-ade6-47e9-8960-1b3774d3baf5",
-              "x_pos": 137,
-              "y_pos": 173.99999237060547,
-              "width": 175,
-              "height": 109,
-              "content": "This sample pipleline model demonstratsa potential interaction between a Vendor mdoel and the ADT Model.",
+              "x_pos": 108,
+              "y_pos": 182.99996185302734,
+              "width": 370,
+              "height": 154,
+              "content": "## This sample pipeline model\n\nThis work demonstrates potential interaction between a Vendor model and the ADT Model.\n\n* This model is called when changes to the VendorA model are detected.\n\n",
               "associated_id_refs": []
             }
           ]
@@ -490,13 +490,15 @@
           "runtime": "Generic",
           "pipeline_defaults": {
             "kubernetes_shared_mem_size": {},
-            "kubernetes_pod_labels": [],
-            "kubernetes_tolerations": [],
             "kubernetes_pod_annotations": [],
+            "kubernetes_tolerations": [],
+            "kubernetes_pod_labels": [],
             "mounted_volumes": [],
             "kubernetes_secrets": [],
-            "env_vars": []
-          }
+            "env_vars": [],
+            "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
+          },
+          "description": "This is a demonstration pipeline to present potential solutions to building and executing a digital thread. "
         }
       },
       "runtime_ref": ""
