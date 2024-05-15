@@ -6,28 +6,35 @@ set "NOTEBOOK_DIR=C:\Users\JohnDeHart\Documents\GitHub\Notebooks\twc_interaction
 set "NOTEBOOK_FILE=pull_vendor_api.ipynb"
 set "JSON_FILE=VendorA.json"
 set "PIPELINE_COMMAND=elyra-pipeline run %NOTEBOOK_DIR%\update_box.pipeline"
-set "CHECK_INTERVAL=60"  :: Check interval in seconds, e.g., 300 seconds = 5 minutes
 
-:: Get initial last modification time
-for /F "delims=" %%I in ('powershell -command "(Get-Item '%NOTEBOOK_DIR%\%JSON_FILE%').LastWriteTime.ToString('yyyyMMddHHmmss')"') do set "LAST_MOD_TIME=%%I"
+:: Initialize old hash
+set "OLD_HASH="
 
 :loop
-:: Execute the Jupyter notebook
-echo [%TIME%] Running the Jupyter Notebook...
-jupyter nbconvert --ExecutePreprocessor.timeout=600 --to notebook --execute --inplace "%NOTEBOOK_DIR%\%NOTEBOOK_FILE%"
+:: Change to the notebook directory
+cd /d "%NOTEBOOK_DIR%"
 
-:: Check if the JSON file was updated
-for /F "delims=" %%I in ('powershell -command "(Get-Item '%NOTEBOOK_DIR%\%JSON_FILE%').LastWriteTime.ToString('yyyyMMddHHmmss')"') do set "NEW_MOD_TIME=%%I"
+:: Run Jupyter notebook
+echo Running the Jupyter Notebook to update JSON...
+jupyter nbconvert --ExecutePreprocessor.timeout=600 --to notebook --execute --inplace "%NOTEBOOK_FILE%"
 
-:: Compare modification times
-if "!NEW_MOD_TIME!" NEQ "!LAST_MOD_TIME!" (
-    echo [%TIME%] JSON file was updated. Running Elyra pipeline...
-    %PIPELINE_COMMAND%
-    set "LAST_MOD_TIME=!NEW_MOD_TIME!"
-) else (
-    echo [%TIME%] No changes detected in JSON file.
+:: Calculate the hash of the JSON file
+for /F "tokens=* delims=" %%F in ('certutil -hashfile "%JSON_FILE%" SHA256') do (
+    set "FILE_HASH=%%F"
+    goto check_hash
 )
 
-:: Wait for the next check
-timeout /t %CHECK_INTERVAL%
+:check_hash
+:: Skip the first line which is the certutil output message
+if "!FILE_HASH!"=="SHA256 hash of file %JSON_FILE%:" goto loop
+
+:: Check if hash has changed
+if not "!OLD_HASH!"=="!FILE_HASH!" (
+    set "OLD_HASH=!FILE_HASH!"
+    echo JSON file content has changed. Running Elyra pipeline...
+    %PIPELINE_COMMAND%
+)
+
+:: Wait for a while before checking again
+timeout /t 30
 goto loop
