@@ -2,47 +2,32 @@
 setlocal EnableDelayedExpansion
 
 :: Variables
-set "DIRECTORY=C:\Users\JohnDeHart\Documents\GitHub\Notebooks\twc_interactions"
-set "FILE=vendorA.json"
-set "COMMAND=elyra-pipeline run %DIRECTORY%\update_box.pipeline"
-set "MAX_RETRIES=10"
-set "RETRY_DELAY=5"
+set "NOTEBOOK_DIR=C:\Users\JohnDeHart\Documents\GitHub\Notebooks\twc_interactions"
+set "NOTEBOOK_FILE=pull_vendor_api.ipynb"
+set "JSON_FILE=VendorA.json"
+set "PIPELINE_COMMAND=elyra-pipeline run %NOTEBOOK_DIR%\update_box.pipeline"
+set "CHECK_INTERVAL=300"  :: Check interval in seconds, e.g., 300 seconds = 5 minutes
 
-:: Initial file state capture
-set "OLD_SIZE=0"
-for /F "usebackq" %%I in (`powershell -Command "(Get-Item '%DIRECTORY%\%FILE%').length"` ) do set "OLD_SIZE=%%I"
+:: Get initial last modification time
+for /F "delims=" %%I in ('powershell -command "(Get-Item '%NOTEBOOK_DIR%\%JSON_FILE%').LastWriteTime.ToString('yyyyMMddHHmmss')"') do set "LAST_MOD_TIME=%%I"
 
 :loop
-timeout /t 10
+:: Execute the Jupyter notebook
+echo [%TIME%] Running the Jupyter Notebook...
+jupyter nbconvert --ExecutePreprocessor.timeout=600 --to notebook --execute --inplace "%NOTEBOOK_DIR%\%NOTEBOOK_FILE%"
 
-:: Check file size for changes
-set "NEW_SIZE=0"
-for /F "usebackq" %%I in (`powershell -Command "(Get-Item '%DIRECTORY%\%FILE%').length"` ) do set "NEW_SIZE=%%I"
+:: Check if the JSON file was updated
+for /F "delims=" %%I in ('powershell -command "(Get-Item '%NOTEBOOK_DIR%\%JSON_FILE%').LastWriteTime.ToString('yyyyMMddHHmmss')"') do set "NEW_MOD_TIME=%%I"
 
-:: Compare sizes
-if !OLD_SIZE! NEQ !NEW_SIZE! (
-    set "OLD_SIZE=!NEW_SIZE!"
-    echo File has changed. Attempting to run command...
-    call :execute_command
+:: Compare modification times
+if "!NEW_MOD_TIME!" NEQ "!LAST_MOD_TIME!" (
+    echo [%TIME%] JSON file was updated. Running Elyra pipeline...
+    %PIPELINE_COMMAND%
+    set "LAST_MOD_TIME=!NEW_MOD_TIME!"
 ) else (
-    echo No changes detected.
+    echo [%TIME%] No changes detected in JSON file.
 )
 
+:: Wait for the next check
+timeout /t %CHECK_INTERVAL%
 goto loop
-
-:execute_command
-set /a "RETRY_COUNT=0"
-
-:retry_logic
-if !RETRY_COUNT! lss %MAX_RETRIES% (
-    %COMMAND%
-    if !ERRORLEVEL! EQU 0 (
-        echo Command executed successfully.
-    ) else (
-        echo Failed to execute command. Retrying...
-        set /a "RETRY_COUNT+=1"
-        timeout /t %RETRY_DELAY%
-        goto retry_logic
-    )
-)
-exit /b
