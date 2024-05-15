@@ -10,33 +10,32 @@ set "PIPELINE_COMMAND=elyra-pipeline run %NOTEBOOK_DIR%\update_box.pipeline"
 :: Change to the notebook directory
 cd /d "%NOTEBOOK_DIR%"
 
-:: Get initial hash of the JSON file
-for /F "tokens=* delims=" %%F in ('certutil -hashfile "%JSON_FILE%" SHA256') do (
-    set "FILE_HASH=%%F"
-    if "!FILE_HASH!" neq "SHA256 hash of file %JSON_FILE%:" (
-        set "OLD_HASH=!FILE_HASH!"
-        goto start_loop
-    )
+:: Calculate initial hash of the JSON file
+set "OLD_HASH="
+for /f "tokens=*" %%a in ('certutil -hashfile "%JSON_FILE%" SHA256 ^| find /i /v "hash" ^| find /i /v "certutil"') do (
+    set "OLD_HASH=!OLD_HASH!%%a"
 )
 
 :start_loop
-:loop
 :: Run Jupyter notebook
 echo Running the Jupyter Notebook to update JSON...
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to notebook --execute --inplace "%NOTEBOOK_FILE%"
 
 :: Calculate the hash of the JSON file
-for /F "tokens=* delims=" %%F in ('certutil -hashfile "%JSON_FILE%" SHA256') do (
-    set "FILE_HASH=%%F"
-    if "!FILE_HASH!" neq "SHA256 hash of file %JSON_FILE%:" (
-        if not "!OLD_HASH!"=="!FILE_HASH!" (
-            set "OLD_HASH=!FILE_HASH!"
-            echo JSON file content has changed. Running Elyra pipeline...
-            %PIPELINE_COMMAND%
-        )
-    )
+set "NEW_HASH="
+for /f "tokens=*" %%a in ('certutil -hashfile "%JSON_FILE%" SHA256 ^| find /i /v "hash" ^| find /i /v "certutil"') do (
+    set "NEW_HASH=!NEW_HASH!%%a"
+)
+
+:: Compare hashes
+if "!OLD_HASH!" neq "!NEW_HASH!" (
+    echo JSON file content has changed. Running Elyra pipeline...
+    %PIPELINE_COMMAND%
+    set "OLD_HASH=!NEW_HASH!"
+) else (
+    echo No change detected in JSON file.
 )
 
 :: Wait for a while before checking again
 timeout /t 30
-goto loop
+goto start_loop
