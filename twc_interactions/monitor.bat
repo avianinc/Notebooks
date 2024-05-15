@@ -6,7 +6,7 @@ set "NOTEBOOK_DIR=C:\Users\JohnDeHart\Documents\GitHub\Notebooks\twc_interaction
 set "NOTEBOOK_FILE=pull_vendor_api.ipynb"
 set "JSON_FILE=VendorA.json"
 set "PIPELINE_COMMAND=elyra-pipeline run %NOTEBOOK_DIR%\update_box.pipeline"
-set "CHECK_INTERVAL=300"  :: Check interval in seconds, e.g., 300 seconds = 5 minutes
+set "CHECK_INTERVAL=60"  :: Check interval in seconds, e.g., 300 seconds = 5 minutes
 
 :: Get initial last modification time
 for /F "delims=" %%I in ('powershell -command "(Get-Item '%NOTEBOOK_DIR%\%JSON_FILE%').LastWriteTime.ToString('yyyyMMddHHmmss')"') do set "LAST_MOD_TIME=%%I"
