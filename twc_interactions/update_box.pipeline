@@ -27,9 +27,8 @@
               "filename": "pull_vendor_api.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "Pull Vendor Data",
             "ui_data": {
-              "label": "Pull Vendor Data",
+              "label": "pull_vendor_api.ipynb",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 180,
               "y_pos": 604.9999465942383,
@@ -84,9 +83,8 @@
               "filename": "push_adt_model.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "Push ADT Model",
             "ui_data": {
-              "label": "Push ADT Model",
+              "label": "push_adt_model.ipynb",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 740,
               "y_pos": 663.9999465942383,
@@ -148,9 +146,8 @@
               "filename": "update_cad_model.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "Update CAD",
             "ui_data": {
-              "label": "Update CAD",
+              "label": "update_cad_model.ipynb",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 426,
               "y_pos": 604.9999771118164,
@@ -212,9 +209,8 @@
               "filename": "git_push_model.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "Commit CAD",
             "ui_data": {
-              "label": "Commit CAD",
+              "label": "git_push_model.ipynb",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 746,
               "y_pos": 422.99996185302734,
@@ -276,9 +272,8 @@
               "filename": "execute_server_side.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "TWC Exectute",
             "ui_data": {
-              "label": "TWC Exectute",
+              "label": "execute_server_side.ipynb",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 978,
               "y_pos": 664.9999694824219,
@@ -340,9 +335,8 @@
               "filename": "store_plot_volume.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
-            "label": "Update Dashbard",
             "ui_data": {
-              "label": "Update Dashbard",
+              "label": "store_plot_volume.ipynb",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 1223,
               "y_pos": 664.9999694824219,
@@ -472,15 +466,6 @@
                   "node_ref": "63ab46f0-1766-4891-ad71-0e216d4ddc7f"
                 }
               ]
-            },
-            {
-              "id": "748364e4-ade6-47e9-8960-1b3774d3baf5",
-              "x_pos": 108,
-              "y_pos": 182.99996185302734,
-              "width": 370,
-              "height": 154,
-              "content": "## This sample pipeline model\n\nThis work demonstrates potential interaction between a Vendor model and the ADT Model.\n\n* This model is called when changes to the VendorA model are detected.\n\n",
-              "associated_id_refs": []
             }
           ]
         },
@@ -489,11 +474,11 @@
           "name": "update_box",
           "runtime": "Generic",
           "pipeline_defaults": {
-            "kubernetes_shared_mem_size": {},
-            "kubernetes_pod_annotations": [],
-            "kubernetes_tolerations": [],
             "kubernetes_pod_labels": [],
             "mounted_volumes": [],
+            "kubernetes_pod_annotations": [],
+            "kubernetes_shared_mem_size": {},
+            "kubernetes_tolerations": [],
             "kubernetes_secrets": [],
             "env_vars": [],
             "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"

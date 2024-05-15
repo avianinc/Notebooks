@@ -1,7 +1,7 @@
 [
     {
         "Description": "length",
-        "Value": "6.0"
+        "Value": "6.666"
     },
     {
         "Description": "height",
@@ -17,6 +17,6 @@
     },
     {
         "Description": "cadVolume",
-        "Value": "120"
+        "Value": "133.32"
     }
 ]
