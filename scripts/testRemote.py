@@ -1,7 +1,7 @@
 import sys
 
 def multiply(a, b):
-    return a * b * 2
+    return a * b
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
